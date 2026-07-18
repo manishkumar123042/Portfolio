@@ -1,101 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Kumar | Portfolio</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <link rel="stylesheet" href="port.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Manish Kumar — AIML Student & AI Engineer</title>
+  <meta name="description" content="Manish Kumar — AIML student building practical ML demos, dashboards and lightweight web apps. Open to internships & collabs." />
+  <meta name="author" content="Manish Kumar" />
+  <meta property="og:title" content="Manish Kumar — AIML Student & AI Engineer" />
+  <meta property="og:description" content="Small, practical ML demos — clean code, fast prototypes, explainable models." />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Manish+Kumar" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
+<body>
+  <!-- Background animation container (insert at top of <body>) -->
+  <div id="bg-anim" aria-hidden="true">
+    <div id="particles-js" class="bg-layer"></div>
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">My Portfolio</a>
-                <ul class="nav-links">
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- SVG blobs for soft gradient shapes -->
+    <svg class="bg-blob blob-a" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="gA" x1="0" x2="1">
+          <stop offset="0" stop-color="#1f6feb"/>
+          <stop offset="1" stop-color="#8b5cf6"/>
+        </linearGradient>
+      </defs>
+      <g>
+        <path fill="url(#gA)" opacity="0.12" d="M428,334Q402,418,333,452Q264,486,198,448Q132,410,90,337Q48,264,96,190Q144,116,220,92Q296,68,354,111Q412,154,436,236Q460,318,428,334Z"></path>
+      </g>
+    </svg>
+
+    <svg class="bg-blob blob-b" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="gB" x1="0" x2="1">
+          <stop offset="0" stop-color="#06b6d4"/>
+          <stop offset="1" stop-color="#60a5fa"/>
+        </linearGradient>
+      </defs>
+      <g>
+        <path fill="url(#gB)" opacity="0.10" d="M481,347Q447,444,362,470Q277,496,198,458Q119,420,92,335Q65,250,106,168Q147,86,235,72Q323,58,378,108Q433,158,471,239Q509,320,481,347Z"></path>
+      </g>
+    </svg>
+  </div>
+
+  <header class="topbar" role="banner">
+    <div class="wrap">
+      <a class="brand" href="#home">Manish<span class="accent">K</span></a>
+      <nav class="main-nav" role="navigation" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn outline" href="resume.pdf" download>Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-intro">
+          <p class="overline">Hello — I’m</p>
+          <h1 id="latestText">Manish Kumar<span class="accent"></span></h1>
+          <p class="sub">AIML student at AKTU — I build practical ML demos, explainable models and lightweight web tools that teammates can run and reuse.</p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+            <a class="btn ghost" href="resume.pdf" download><i class="fa-solid fa-download"></i> Download CV</a>
+          </div>
+
+          <ul class="skills">
+            <li>Python</li><li>C++</li><li>Pandas</li>
+          </ul>
         </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div id="particles-js"></div>
-            <div class="container hero-content">
-                <div class="hero-left">
-                    <p class="greeting">Hello 👋</p>
-                    <h1>I'm <span>Manish Kumar</span></h1>
-                    <h2 class="role">A.I Engineer</h2>
-                    <div class="hero-buttons">
-                        <a href="mailto:your.email@example.com" class="btn btn-primary">Let's Connect</a>
-                        <a href="#" class="btn btn-secondary">My Resume</a>
-                    </div>
-                </div>
-                <div class="hero-right">
-                    <img src="C:\Users\manish gupta\OneDrive\Desktop\Portfolio\image\hero.jpg" alt="Your Name - Profile Picture" class="profile-photo">
-                </div>
+        <aside class="hero-card" id="profileCard" aria-label="Profile">
+          <img src="./image/hero.jpg" alt="Photo of Manish Kumar" class="photo" loading="lazy" onerror="this.style.display='none'">
+          <div class="card-body">
+            <h3 class="name">Manish Kumar</h3>
+            <p class="role muted">AIML Student & Developer</p>
+            <div class="socials">
+              <a href="https://github.com/Manishgupta1234202" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="container tech-stack">
-                <p>C</p>
-                <p>C++</p>
-                <p>Python</p>
-                <p>HTML</p>
-            </div>
-        </section>
-         <section id="about" class="about">
-            <div class="container">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <p>I started my software journey with a passion for creative problem-solving. Over the years
-                        , I've honed my skills in building robust and scalable applications.
-                         My focus is on creating intuitive user experiences and efficient backend systems. 
-                         I love tackling complex challenges and bringing innovative ideas to life.</p>
-                </div>
-            </div>
-        </section>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>My Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Student Performance TRacker</h3>
-                        <p>A brief description of the project, the technologies used (e.g.,JavaScript,PHP), and its main purpose.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project Title Two</h3>
-                        <p>A brief description of the project, the technologies used (e.g., HTML, CSS, JavaScript), and its main purpose.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project Title Three</h3>
-                        <p>A brief description of the project, the technologies used (e.g., Python, Django), and its main purpose.</p>
-                    </div>
-                </div>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap card">
+        <div class="about-grid">
+          <div>
+            <h2>About</h2>
+            <p class="muted">I quickly prototype ML ideas and turn them into small demos or dashboards. I prioritize clear code, reproducible steps, and model explainability (SHAP / LIME) so collaborators can understand results without guessing.</p>
+
+            <div class="stats">
+              <div><strong>3rd year</strong><span> AIML, AKTU</span></div>
             </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://github.com/Manishgupta1234202" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p>&copy; 2025 Manish Kumar. All Rights Reserved.</p>
+          </div>
         </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <h2 class="center">Selected projects</h2>
+        <div class="projects-grid">
+          <article class="project reveal" tabindex="0" aria-label="Student Performance Tracker">
+            <div class="p-preview">📈</div>
+            <h3>Student Performance Tracker</h3>
+            <p class="muted">Regression baseline + SHAP explanations and a small Flask demo so instructors can test interventions.</p>
+            <div class="meta">
+              <span class="pill">Python</span>
+              <span class="pill">scikit-learn</span>
+              <a class="link" href="#" target="_blank" rel="noopener">View</a>
+            </div>
+          </article>
+
+          <article class="project reveal" tabindex="0" aria-label="Image Filter Classifier">
+            <div class="p-preview">🤖</div>
+            <h3>Image Filter Classifier</h3>
+            <p class="muted">Transfer-learning prototype with a tiny upload UI — focused on quick iterations and small model size.</p>
+            <div class="meta">
+              <span class="pill">TensorFlow</span>
+              <span class="pill">Transfer</span>
+              <a class="link" href="#" target="_blank" rel="noopener">View</a>
+            </div>
+          </article>
+
+          <article class="project reveal" tabindex="0" aria-label="Student Feedback Dashboard">
+            <div class="p-preview">📊</div>
+            <h3>Student Feedback Dashboard</h3>
+            <p class="muted">Keyword extraction + Streamlit dashboard to surface repeating themes across batches.</p>
+            <div class="meta">
+              <span class="pill">NLP</span>
+              <span class="pill">Streamlit</span>
+              <a class="link" href="#" target="_blank" rel="noopener">View</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap card contact-card">
+        <div class="contact-grid">
+          <div>
+            <h2>Contact</h2>
+            <p class="muted">Short message works best — mention the scope, timeline and any data you can share. I reply to practical, clear requests quickly.</p>
+
+            <ul class="contact-list muted">
+              <li><i class="fa-solid fa-envelope"></i> manishgupta4059@gmail.com</li>
+              <li><i class="fa-solid fa-location-dot"></i> Greater Noida, India</li>
+            </ul>
+          </div>
+
+          <!-- Netlify-ready form (also works with mailto fallback implemented in JS) -->
+          <form id="contactForm" class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact">
+            <p class="sr-only"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
+
+            <input name="name" type="text" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="Your email" required>
+            <textarea name="message" rows="5" placeholder="How can I help?" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Send message</button>
+              <button type="reset" class="btn ghost">Reset</button>
+            </div>
+
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="brand-line">
+        <span class="brand">Manish<span class="accent">K</span></span>
+        <p class="muted">AIML student — small demos & explainable models</p>
+      </div>
+      <div class="copyright muted">© <span id="year"></span> Manish Kumar</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
